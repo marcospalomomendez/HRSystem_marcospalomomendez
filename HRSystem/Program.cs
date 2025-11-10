@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// =========================================================
-// TechSolutions S.L - Sistema de Gestión de Personal (HRSystem)
-// =========================================================
-
-// ✅ Ejercicio 1: Abstracción, Encapsulación y Validación
+// Ejercicio 1: Abstracción, Encapsulación y Validación
 abstract class Empleado
 {
     public string Nombre { get; set; }
 
     private double _salarioBase;
 
-    // ✅ Encapsulación y validación: no valores negativos (sin ternarias)
+    // Encapsulación y validación: no valores negativos (sin ternarias)
     public double SalarioBase
     {
         get { return _salarioBase; }
@@ -29,7 +25,7 @@ abstract class Empleado
         }
     }
 
-    // ✅ Constructor base
+    // Constructor base
     public Empleado(string nombre, double salarioBase)
     {
         Nombre = nombre;
@@ -45,8 +41,7 @@ abstract class Empleado
     }
 }
 
-// =========================================================
-// ✅ Ejercicio 2: Herencia y Primera Implementación (EmpleadoFijo)
+// Ejercicio 2: Herencia y Primera Implementación (EmpleadoFijo)
 class EmpleadoFijo : Empleado
 {
     private double _bonoAnual;
@@ -73,7 +68,7 @@ class EmpleadoFijo : Empleado
         BonoAnual = bonoAnual;
     }
 
-    // ✅ Polimorfismo
+    //Polimorfismo
     public override double CalcularNomina()
     {
         return SalarioBase + (BonoAnual / 12);
@@ -85,8 +80,7 @@ class EmpleadoFijo : Empleado
     }
 }
 
-// =========================================================
-// ✅ Ejercicio 3: Atributos Específicos y Polimorfismo Final (EmpleadoPorHora)
+// Ejercicio 3: Atributos Específicos y Polimorfismo Final (EmpleadoPorHora)
 class EmpleadoPorHora : Empleado
 {
     private double _tarifaHora;
@@ -142,8 +136,7 @@ class EmpleadoPorHora : Empleado
     }
 }
 
-// =========================================================
-// ✅ Ejercicio 4: Integración del Sistema de Consola (Polimorfismo con Colecciones)
+// Ejercicio 4: Integración del Sistema de Consola (Polimorfismo con Colecciones)
 class Program
 {
     static List<Empleado> empleados = new List<Empleado>();
